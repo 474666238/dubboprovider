@@ -9,10 +9,11 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {"com.laid"})
 @DubboComponentScan(basePackages = {"com.laid.service"})
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.laid.Main.class);
         DemoService demoService = ctx.getBean(DemoService.class);
         System.out.println(demoService);
+        while(true){}
     }
 }
 
